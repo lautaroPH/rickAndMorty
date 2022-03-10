@@ -1,0 +1,16 @@
+.characterContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 300px);
+    grid-gap: 20px;
+    width: 80%;
+    margin: auto;
+    justify-content: center;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.noMoreCharacters {
+    text-align: center;
+    color: red;
+    font-size: 20px;
+}
