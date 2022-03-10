@@ -8,48 +8,49 @@ import { ALL_CHARACTER } from '../schemasGraphql/allCharacter';
 import { clientApollo } from '../utils/clientApollo';
 
 export default function Home() {
-  const [getCharacter, result] = useLazyQuery(ALL_CHARACTER);
-  const [characters, setCharacters] = useState([]);
-  const [hasNextPage, sethasNextPage] = useState('');
-  const [page, setPage] = useState(2);
+  // const [getCharacter, result] = useLazyQuery(ALL_CHARACTER);
+  // const [characters, setCharacters] = useState([]);
+  // const [hasNextPage, sethasNextPage] = useState('');
+  // const [page, setPage] = useState(2);
 
-  const externalRef = useRef();
+  // const externalRef = useRef();
 
-  const { isNearScreen } = useNearScreen({
-    externalRef: externalRef,
-    once: false,
-  });
+  // const { isNearScreen } = useNearScreen({
+  //   externalRef: externalRef,
+  //   once: false,
+  // });
 
-  useEffect(() => {
-    if (isNearScreen) {
-      getCharacter({ variables: { page } });
-    }
-  }, [page, getCharacter, isNearScreen]);
+  // useEffect(() => {
+  //   if (isNearScreen) {
+  //     getCharacter({ variables: { page } });
+  //   }
+  // }, [page, getCharacter, isNearScreen]);
 
-  useEffect(() => {
-    if (
-      result?.data?.allCharacter &&
-      result?.data?.hasNextPage !== hasNextPage &&
-      hasNextPage
-    ) {
-      setCharacters((character) =>
-        [...character, result?.data?.allCharacter].flat(Infinity)
-      );
-      setPage(page + 1);
-      sethasNextPage(result?.data?.hasNextPage);
-    }
-  }, [result, hasNextPage, page]);
+  // useEffect(() => {
+  //   if (
+  //     result?.data?.allCharacter &&
+  //     result?.data?.hasNextPage !== hasNextPage &&
+  //     hasNextPage
+  //   ) {
+  //     setCharacters((character) =>
+  //       [...character, result?.data?.allCharacter].flat(Infinity)
+  //     );
+  //     setPage(page + 1);
+  //     sethasNextPage(result?.data?.hasNextPage);
+  //   }
+  // }, [result, hasNextPage, page]);
 
   return (
-    <>
-      <Header />
-      <CharactersList
-        characters={characters}
-        noMoreCharacters={hasNextPage}
-        loading={result?.loading}
-      />
-      <div id="visor" ref={externalRef}></div>
-    </>
+    // <>
+    //   <Header />
+    //   <CharactersList
+    //     characters={characters}
+    //     noMoreCharacters={hasNextPage}
+    //     loading={result?.loading}
+    //   />
+    //   <div id="visor" ref={externalRef}></div>
+    // </>
+    <div>hola puta</div>
   );
 }
 
