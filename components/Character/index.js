@@ -14,8 +14,8 @@ const Character = ({ character }) => {
             <div className={styles.containerImg}>
               {character?.image !== undefined && (
                 <Image
-                  width={300}
-                  height={200}
+                  width={600}
+                  height={600}
                   layout="responsive"
                   src={character?.image}
                   priority={true}

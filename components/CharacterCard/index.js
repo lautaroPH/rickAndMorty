@@ -3,14 +3,15 @@ import Link from 'next/link';
 import styles from './styles.module.css';
 
 const CharacterCard = ({ id, name, episode, image, species }) => {
+  const signo = '>';
   return (
     <Link href={`/character/${id}`} passHref>
       <a className={styles.aContainer}>
         <div className={styles.cardContainer}>
           <div className={styles.imgContainer}>
             <Image
-              width={300}
-              height={200}
+              width={177}
+              height={177}
               layout="responsive"
               priority={id < 4}
               src={image}
@@ -18,10 +19,10 @@ const CharacterCard = ({ id, name, episode, image, species }) => {
               className={styles.imgCharacter}
             />
           </div>
-          <h2>
-            {name} - {species}
-          </h2>
-          <h4>Episodes that appeared: {episode.length}</h4>
+          <div className={styles.titleContainer}>
+            <h2>{name}</h2>
+            <p className={styles.titleContainerP}>{signo}</p>
+          </div>
         </div>
       </a>
     </Link>

@@ -6,11 +6,15 @@
 }
 
 .containerImg {
-    width: 60%;
+    width: 40%;
+    height: 40%;
     margin: auto;
 }
 
 .img {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
     object-fit: contain;
 }
 
@@ -38,4 +42,24 @@
 
 .GoBack:hover {
     background-color: #171C28;
+}
+
+@media (max-width: 1000px) {
+    .containerCharacter {
+        margin-top: 30px;
+    }
+
+    .containerImg {
+        width: 70%;
+        height: 70%;
+        margin: auto;
+    }
+}
+
+@media (max-width: 730px) {
+    .containerImg {
+        width: 80%;
+        height: 80%;
+        margin: auto;
+    }
 }

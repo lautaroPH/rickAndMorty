@@ -1,4 +1,5 @@
 import CharacterCard from '../CharacterCard';
+import LoaderSkeletonCard from '../loaderSkeletonCard';
 import styles from './styles.module.css';
 
 const CharactersList = ({ characters, noMoreCharacters, loading }) => {
@@ -16,8 +17,8 @@ const CharactersList = ({ characters, noMoreCharacters, loading }) => {
               species={character.species}
             />
           ))}
+        {loading && <LoaderSkeletonCard />}
       </div>
-      {loading && <p>Cargando</p>}
       {!noMoreCharacters && (
         <p className={styles.noMoreCharacters}>No hay mas personajes</p>
       )}
