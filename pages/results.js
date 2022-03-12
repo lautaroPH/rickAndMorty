@@ -3,7 +3,7 @@ import Header from '../components/Header';
 import { SEARCH_CHARACTERS } from '../schemasGraphql/searchCharacters';
 import { clientApollo } from '../utils/clientApollo';
 import { useRouter } from 'next/router';
-import styles from '../components/Character/styles.module.css';
+import styles from '../components/CharactersList/styles.module.css';
 
 export default function Result({ data, loading }) {
   const router = useRouter();
@@ -13,7 +13,7 @@ export default function Result({ data, loading }) {
       <Header title={query} />
 
       <div className={styles.containerResults}>
-        <h2>Search results by: {query}</h2>
+        <h2 className={styles.title}>Search results by: {query}</h2>
         {data?.findCharacter ? (
           <CharactersList characters={data?.findCharacter} loading={loading} />
         ) : (

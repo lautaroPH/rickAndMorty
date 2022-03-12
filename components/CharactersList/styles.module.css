@@ -1,3 +1,16 @@
+.containerResults {
+    text-align: center;
+}
+
+.title {
+    font-size: 30px;
+}
+
+.containerResults h4 {
+    font-size: 24px;
+    color: rgb(174, 32, 32);
+}
+
 .characterContainer {
     display: grid;
     grid-template-columns: repeat(auto-fill, 300px);
