@@ -2,14 +2,11 @@ import Image from 'next/image';
 import Link from 'next/link';
 import styles from './styles.module.css';
 
-const Character = ({ character }) => {
+const CharacterScreen = ({ character }) => {
   return (
     <>
-      {character && (
+      {character ? (
         <>
-          <Link href="/">
-            <a className={styles.GoBack}>Go Back</a>
-          </Link>
           <div className={styles.containerCharacter}>
             <div className={styles.containerImg}>
               {character?.image !== undefined && (
@@ -32,9 +29,11 @@ const Character = ({ character }) => {
             </h4>
           </div>
         </>
+      ) : (
+        character === undefined && <h2>Redirecting to home screen</h2>
       )}
     </>
   );
 };
 
-export default Character;
+export default CharacterScreen;

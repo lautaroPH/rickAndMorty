@@ -1,6 +1,6 @@
 import { useLazyQuery } from '@apollo/client';
-import debounce from 'just-debounce-it';
-import { useRef, useCallback, useState, useEffect } from 'react';
+import Head from 'next/head';
+import { useRef, useState, useEffect } from 'react';
 import CharactersList from '../components/CharactersList';
 import Header from '../components/Header';
 import useNearScreen from '../hooks/useNearScreen';
@@ -42,6 +42,13 @@ export default function Home({ data }) {
 
   return (
     <>
+      <Head>
+        <title>Rick and Morty</title>
+        <meta
+          name="description"
+          content="Pagina de prueba utilizando la api de rick and morty con un servicio de graphql y nextjs"
+        />
+      </Head>
       <Header />
       <CharactersList
         characters={characters}

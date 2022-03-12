@@ -2,7 +2,11 @@ import CharacterCard from '../CharacterCard';
 import LoaderSkeletonCard from '../loaderSkeletonCard';
 import styles from './styles.module.css';
 
-const CharactersList = ({ characters, noMoreCharacters, loading }) => {
+const CharactersList = ({
+  characters,
+  noMoreCharacters = true,
+  loading = false,
+}) => {
   return (
     <>
       <div className={styles.characterContainer}>
@@ -12,9 +16,7 @@ const CharactersList = ({ characters, noMoreCharacters, loading }) => {
               key={character.id}
               id={character.id}
               name={character.name}
-              episode={character.episode}
               image={character.image}
-              species={character.species}
             />
           ))}
         {loading && <LoaderSkeletonCard />}

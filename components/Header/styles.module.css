@@ -1,9 +1,17 @@
-.header {
+.headerConatainer {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
 }
 
 .title {
+    text-decoration: none;
+    color: #eee;
     font-family: 'Sansita Swashed', cursive;
+}
+
+@media (max-width:565px) {
+    .headerConatainer {
+        flex-direction: column;
+    }
 }

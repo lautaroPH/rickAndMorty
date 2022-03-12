@@ -1,13 +1,17 @@
-import Character from '../../components/Character';
+import CharacterScreen from '../../components/Character';
 import { CHARACTERCOUNT } from '../../schemasGraphql/characterCount';
 import { CHARACTER } from '../../schemasGraphql/charactetById';
 import { clientApollo } from '../../utils/clientApollo';
+import Header from '../../components/Header';
 
-export default function OneCharacter({ data }) {
+export default function Character({ data }) {
   return (
-    <main>
-      <Character character={data?.characterById} />
-    </main>
+    <>
+      <Header title={data?.characterById.name} />
+      <main>
+        <CharacterScreen character={data?.characterById} />
+      </main>
+    </>
   );
 }
 

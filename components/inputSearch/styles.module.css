@@ -1,0 +1,38 @@
+.formContainer {
+    display: inline;
+    padding: 0.75rem;
+    border-radius: 0.375rem;
+    margin-top: 0.25rem;
+    position: relative;
+    width: 250px
+}
+
+.lupaContainer {
+    align-items: center;
+    padding-left: 0.5rem;
+    display: flex;
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    pointer-events: none;
+}
+
+.searchInput {
+    display: block;
+    padding: 0.5rem;
+    padding-left: 2rem;
+    border-radius: 0.375rem;
+    width: 100%;
+    border: 2px solid gray;
+    background-color: #eee;
+}
+
+.searchInput:disabled {
+    cursor: not-allowed !important;
+}
+
+@media (max-width:565px) {
+    .formContainer {
+        width: 70%;
+    }
+}

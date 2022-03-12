@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import styles from './styles.module.css';
 
-const CharacterCard = ({ id, name, episode, image, species }) => {
+const CharacterCard = ({ id, name, image }) => {
   const signo = '>';
   return (
     <Link href={`/character/${id}`} passHref>
