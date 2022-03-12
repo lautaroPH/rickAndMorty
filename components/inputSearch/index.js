@@ -12,7 +12,6 @@ const InputSearch = () => {
     if (keyWord !== '') {
       setLoading(true);
       router.push(`/results?character=${keyWord}`);
-      console.log(loading);
     }
     setLoading(false);
   };
