@@ -2,7 +2,7 @@ import CharactersList from '../components/CharactersList';
 import Header from '../components/Header';
 import { SEARCH_CHARACTERS } from '../schemasGraphql/searchCharacters';
 import { clientApollo } from '../utils/clientApollo';
-import { useRouter } from 'next/dist/client/router';
+import { useRouter } from 'next/router';
 import styles from '../components/Character/styles.module.css';
 
 export default function Result({ data, loading }) {
