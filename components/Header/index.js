@@ -12,7 +12,7 @@ const Header = ({ title }) => {
           </title>
           <meta
             name="description"
-            content="Paginda de practica con la api de Rick and Morty usando el servicio de graphql personalizado con nextjs"
+            content="Pagina de prueba utilizando la api de rick and morty con un servicio de graphql y nextjs"
           />
         </Head>
         <div className={styles.headerConatainer}>

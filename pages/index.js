@@ -33,7 +33,7 @@ export default function Home({ data }) {
       hasNextPage
     ) {
       setCharacters((character) =>
-        [...character, result?.data?.allCharacter].flat(Infinity)
+        [...character, result?.data?.allCharacter].flat(4)
       );
       setPage(page + 1);
       sethasNextPage(result?.data?.hasNextPage);
@@ -42,13 +42,6 @@ export default function Home({ data }) {
 
   return (
     <>
-      <Head>
-        <title>Rick and Morty</title>
-        <meta
-          name="description"
-          content="Pagina de prueba utilizando la api de rick and morty con un servicio de graphql y nextjs"
-        />
-      </Head>
       <Header />
       <CharactersList
         characters={characters}
