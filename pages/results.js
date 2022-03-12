@@ -2,18 +2,14 @@ import CharactersList from '../components/CharactersList';
 import Header from '../components/Header';
 import { SEARCH_CHARACTERS } from '../schemasGraphql/searchCharacters';
 import { clientApollo } from '../utils/clientApollo';
-import { useRouter } from 'next/router';
 import styles from '../components/CharactersList/styles.module.css';
 
-export default function Result({ data, loading }) {
-  const router = useRouter();
-  const query = router.query.character;
+export default function Result({ data, loading, name }) {
   return (
     <>
-      <Header title={query} />
-
+      <Header title={name} />
       <div className={styles.containerResults}>
-        <h2 className={styles.title}>Search results by: {query}</h2>
+        <h2 className={styles.title}>Search results by: {name}</h2>
         {data?.findCharacter ? (
           <CharactersList characters={data?.findCharacter} loading={loading} />
         ) : (
@@ -34,7 +30,7 @@ export async function getServerSideProps(context) {
     });
 
     return {
-      props: { data, loading },
+      props: { data, loading, name },
     };
   } else {
     return {

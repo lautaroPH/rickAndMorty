@@ -4,16 +4,13 @@ import styles from './styles.module.css';
 
 const InputSearch = () => {
   const [keyWord, setKeyWord] = useState('');
-  const [loading, setLoading] = useState(false);
   const router = useRouter();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (keyWord !== '') {
-      setLoading(true);
       router.push(`/results?character=${keyWord}`);
     }
-    setLoading(false);
   };
 
   return (
@@ -24,7 +21,6 @@ const InputSearch = () => {
           type="search"
           placeholder="Search characters"
           value={keyWord}
-          disabled={loading}
           onChange={(e) => setKeyWord(e.target.value)}
         />
         <div className={styles.lupaContainer}>
